@@ -1,0 +1,32 @@
+
+<h1>College List</h1>
+
+
+<div id="showUserDetails">
+<%= render "show" %>
+</div>
+
+<%#= form_with(model: [ @college, @college.students.build ], local: true) do |form| %>
+
+<%= form_with model: @college , local: false, id: "createnewcollege" do |form| %>
+  <div>
+    <%= form.label :college_name %><br>
+    <%= form.text_field :college_name %>
+
+  </div>
+
+  <div>
+    <%= form.label :college_RNO %><br>
+    <%= form.text_field :college_RNO %><br>
+   
+  </div>
+    <%= form.fields_for :students  do |address_subform| %>
+    <%= address_subform.label :student_name %><br>
+    <%= address_subform.text_field :student_name %><br>
+    <%= address_subform.label :student_RNO %><br>
+    <%= address_subform.text_field :student_RNO %><br>
+   <% end %>
+  <div>
+    <%= form.submit  %>
+  </div>
+<% end %>

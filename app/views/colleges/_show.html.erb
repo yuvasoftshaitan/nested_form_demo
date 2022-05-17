@@ -1,0 +1,30 @@
+<%#debugger%>
+<table >
+<thead>
+  <tr>
+  	<th>College Name
+  	</th>
+  	<th>college_RNO
+  	</th>
+  	<th>student_name
+  	</th>
+  	<th>student_RNO
+  	</th>
+  </tr>
+  <thead>
+ <% @colleges.each do |college| %>
+  <tbody>
+		<td> <%= college.college_name %>
+		</td>
+		<td> <%= college.college_RNO %>
+		</td>
+		<% college.students.each do |students| %>
+		<td> <%= students.student_name%>
+		</td>
+		<td> <%= students.student_RNO%>
+		</td>
+		<%end%>
+       <% end %>
+    </tbody>
+</table>
+	
